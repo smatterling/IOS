@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D8E5EC21E69486C008A43BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8E5EC11E69486C008A43BD /* main.m */; };
+		6D8E5EC51E69486C008A43BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8E5EC41E69486C008A43BD /* AppDelegate.m */; };
+		6D8E5EC81E69486C008A43BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8E5EC71E69486C008A43BD /* ViewController.m */; };
+		6D8E5ECB1E69486C008A43BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D8E5EC91E69486C008A43BD /* Main.storyboard */; };
+		6D8E5ECD1E69486C008A43BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8E5ECC1E69486C008A43BD /* Assets.xcassets */; };
+		6D8E5ED01E69486C008A43BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D8E5ECE1E69486C008A43BD /* LaunchScreen.storyboard */; };
+		6D8E5EDB1E69486C008A43BD /* SmatterlingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8E5EDA1E69486C008A43BD /* SmatterlingTests.m */; };
+		6D8E5EE61E69486C008A43BD /* SmatterlingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8E5EE51E69486C008A43BD /* SmatterlingUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6D8E5ED71E69486C008A43BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D8E5EB51E69486B008A43BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D8E5EBC1E69486B008A43BD;
+			remoteInfo = Smatterling;
+		};
+		6D8E5EE21E69486C008A43BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D8E5EB51E69486B008A43BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D8E5EBC1E69486B008A43BD;
+			remoteInfo = Smatterling;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6D8E5EBD1E69486C008A43BD /* Smatterling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smatterling.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D8E5EC11E69486C008A43BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6D8E5EC31E69486C008A43BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6D8E5EC41E69486C008A43BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6D8E5EC61E69486C008A43BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6D8E5EC71E69486C008A43BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6D8E5ECA1E69486C008A43BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6D8E5ECC1E69486C008A43BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6D8E5ECF1E69486C008A43BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6D8E5ED11E69486C008A43BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D8E5ED61E69486C008A43BD /* SmatterlingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmatterlingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D8E5EDA1E69486C008A43BD /* SmatterlingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmatterlingTests.m; sourceTree = "<group>"; };
+		6D8E5EDC1E69486C008A43BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D8E5EE11E69486C008A43BD /* SmatterlingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmatterlingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D8E5EE51E69486C008A43BD /* SmatterlingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmatterlingUITests.m; sourceTree = "<group>"; };
+		6D8E5EE71E69486C008A43BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6D8E5EBA1E69486B008A43BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8E5ED31E69486C008A43BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8E5EDE1E69486C008A43BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6D8E5EB41E69486B008A43BD = {
+			isa = PBXGroup;
+			children = (
+				6D8E5EBF1E69486C008A43BD /* Smatterling */,
+				6D8E5ED91E69486C008A43BD /* SmatterlingTests */,
+				6D8E5EE41E69486C008A43BD /* SmatterlingUITests */,
+				6D8E5EBE1E69486C008A43BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6D8E5EBE1E69486C008A43BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6D8E5EBD1E69486C008A43BD /* Smatterling.app */,
+				6D8E5ED61E69486C008A43BD /* SmatterlingTests.xctest */,
+				6D8E5EE11E69486C008A43BD /* SmatterlingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D8E5EBF1E69486C008A43BD /* Smatterling */ = {
+			isa = PBXGroup;
+			children = (
+				6D8E5EC31E69486C008A43BD /* AppDelegate.h */,
+				6D8E5EC41E69486C008A43BD /* AppDelegate.m */,
+				6D8E5EC61E69486C008A43BD /* ViewController.h */,
+				6D8E5EC71E69486C008A43BD /* ViewController.m */,
+				6D8E5EC91E69486C008A43BD /* Main.storyboard */,
+				6D8E5ECC1E69486C008A43BD /* Assets.xcassets */,
+				6D8E5ECE1E69486C008A43BD /* LaunchScreen.storyboard */,
+				6D8E5ED11E69486C008A43BD /* Info.plist */,
+				6D8E5EC01E69486C008A43BD /* Supporting Files */,
+			);
+			path = Smatterling;
+			sourceTree = "<group>";
+		};
+		6D8E5EC01E69486C008A43BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D8E5EC11E69486C008A43BD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D8E5ED91E69486C008A43BD /* SmatterlingTests */ = {
+			isa = PBXGroup;
+			children = (
+				6D8E5EDA1E69486C008A43BD /* SmatterlingTests.m */,
+				6D8E5EDC1E69486C008A43BD /* Info.plist */,
+			);
+			path = SmatterlingTests;
+			sourceTree = "<group>";
+		};
+		6D8E5EE41E69486C008A43BD /* SmatterlingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6D8E5EE51E69486C008A43BD /* SmatterlingUITests.m */,
+				6D8E5EE71E69486C008A43BD /* Info.plist */,
+			);
+			path = SmatterlingUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6D8E5EBC1E69486B008A43BD /* Smatterling */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D8E5EEA1E69486C008A43BD /* Build configuration list for PBXNativeTarget "Smatterling" */;
+			buildPhases = (
+				6D8E5EB91E69486B008A43BD /* Sources */,
+				6D8E5EBA1E69486B008A43BD /* Frameworks */,
+				6D8E5EBB1E69486B008A43BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Smatterling;
+			productName = Smatterling;
+			productReference = 6D8E5EBD1E69486C008A43BD /* Smatterling.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6D8E5ED51E69486C008A43BD /* SmatterlingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D8E5EED1E69486C008A43BD /* Build configuration list for PBXNativeTarget "SmatterlingTests" */;
+			buildPhases = (
+				6D8E5ED21E69486C008A43BD /* Sources */,
+				6D8E5ED31E69486C008A43BD /* Frameworks */,
+				6D8E5ED41E69486C008A43BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D8E5ED81E69486C008A43BD /* PBXTargetDependency */,
+			);
+			name = SmatterlingTests;
+			productName = SmatterlingTests;
+			productReference = 6D8E5ED61E69486C008A43BD /* SmatterlingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6D8E5EE01E69486C008A43BD /* SmatterlingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D8E5EF01E69486C008A43BD /* Build configuration list for PBXNativeTarget "SmatterlingUITests" */;
+			buildPhases = (
+				6D8E5EDD1E69486C008A43BD /* Sources */,
+				6D8E5EDE1E69486C008A43BD /* Frameworks */,
+				6D8E5EDF1E69486C008A43BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D8E5EE31E69486C008A43BD /* PBXTargetDependency */,
+			);
+			name = SmatterlingUITests;
+			productName = SmatterlingUITests;
+			productReference = 6D8E5EE11E69486C008A43BD /* SmatterlingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6D8E5EB51E69486B008A43BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = AlphaAlgorithms;
+				TargetAttributes = {
+					6D8E5EBC1E69486B008A43BD = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = DKXJ8N45FU;
+						ProvisioningStyle = Automatic;
+					};
+					6D8E5ED51E69486C008A43BD = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = DKXJ8N45FU;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6D8E5EBC1E69486B008A43BD;
+					};
+					6D8E5EE01E69486C008A43BD = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = DKXJ8N45FU;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6D8E5EBC1E69486B008A43BD;
+					};
+				};
+			};
+			buildConfigurationList = 6D8E5EB81E69486B008A43BD /* Build configuration list for PBXProject "Smatterling" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6D8E5EB41E69486B008A43BD;
+			productRefGroup = 6D8E5EBE1E69486C008A43BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6D8E5EBC1E69486B008A43BD /* Smatterling */,
+				6D8E5ED51E69486C008A43BD /* SmatterlingTests */,
+				6D8E5EE01E69486C008A43BD /* SmatterlingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6D8E5EBB1E69486B008A43BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8E5ED01E69486C008A43BD /* LaunchScreen.storyboard in Resources */,
+				6D8E5ECD1E69486C008A43BD /* Assets.xcassets in Resources */,
+				6D8E5ECB1E69486C008A43BD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8E5ED41E69486C008A43BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8E5EDF1E69486C008A43BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6D8E5EB91E69486B008A43BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8E5EC81E69486C008A43BD /* ViewController.m in Sources */,
+				6D8E5EC51E69486C008A43BD /* AppDelegate.m in Sources */,
+				6D8E5EC21E69486C008A43BD /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8E5ED21E69486C008A43BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8E5EDB1E69486C008A43BD /* SmatterlingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8E5EDD1E69486C008A43BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8E5EE61E69486C008A43BD /* SmatterlingUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6D8E5ED81E69486C008A43BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D8E5EBC1E69486B008A43BD /* Smatterling */;
+			targetProxy = 6D8E5ED71E69486C008A43BD /* PBXContainerItemProxy */;
+		};
+		6D8E5EE31E69486C008A43BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D8E5EBC1E69486B008A43BD /* Smatterling */;
+			targetProxy = 6D8E5EE21E69486C008A43BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6D8E5EC91E69486C008A43BD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D8E5ECA1E69486C008A43BD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6D8E5ECE1E69486C008A43BD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D8E5ECF1E69486C008A43BD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6D8E5EE81E69486C008A43BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6D8E5EE91E69486C008A43BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6D8E5EEB1E69486C008A43BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DKXJ8N45FU;
+				INFOPLIST_FILE = Smatterling/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alphaalgorithms.Smatterling;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6D8E5EEC1E69486C008A43BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DKXJ8N45FU;
+				INFOPLIST_FILE = Smatterling/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alphaalgorithms.Smatterling;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6D8E5EEE1E69486C008A43BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = DKXJ8N45FU;
+				INFOPLIST_FILE = SmatterlingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alphaalgorithms.SmatterlingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smatterling.app/Smatterling";
+			};
+			name = Debug;
+		};
+		6D8E5EEF1E69486C008A43BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = DKXJ8N45FU;
+				INFOPLIST_FILE = SmatterlingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alphaalgorithms.SmatterlingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smatterling.app/Smatterling";
+			};
+			name = Release;
+		};
+		6D8E5EF11E69486C008A43BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = DKXJ8N45FU;
+				INFOPLIST_FILE = SmatterlingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alphaalgorithms.SmatterlingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Smatterling;
+			};
+			name = Debug;
+		};
+		6D8E5EF21E69486C008A43BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = DKXJ8N45FU;
+				INFOPLIST_FILE = SmatterlingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alphaalgorithms.SmatterlingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Smatterling;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6D8E5EB81E69486B008A43BD /* Build configuration list for PBXProject "Smatterling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D8E5EE81E69486C008A43BD /* Debug */,
+				6D8E5EE91E69486C008A43BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D8E5EEA1E69486C008A43BD /* Build configuration list for PBXNativeTarget "Smatterling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D8E5EEB1E69486C008A43BD /* Debug */,
+				6D8E5EEC1E69486C008A43BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6D8E5EED1E69486C008A43BD /* Build configuration list for PBXNativeTarget "SmatterlingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D8E5EEE1E69486C008A43BD /* Debug */,
+				6D8E5EEF1E69486C008A43BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6D8E5EF01E69486C008A43BD /* Build configuration list for PBXNativeTarget "SmatterlingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D8E5EF11E69486C008A43BD /* Debug */,
+				6D8E5EF21E69486C008A43BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6D8E5EB51E69486B008A43BD /* Project object */;
+}
