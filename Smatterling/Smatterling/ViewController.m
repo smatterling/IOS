@@ -9,10 +9,13 @@
 #import "ViewController.h"
 #import "OnboardingViewController.h"
 #import "OnboardingPagerManager.h"
+#import "SignupViewController.h"
+#import "AppManager.h"
 
 // Custom Login Button Classes
 #import "HyTransitions.h"
 #import "HyLoginButton.h"
+
 
 @interface ViewController ()<UIViewControllerTransitioningDelegate>
 {
@@ -24,6 +27,7 @@
     __weak IBOutlet UIButton *register_button;
     __weak IBOutlet UIView *loginButtonPanel;
     __weak IBOutlet UIImageView *fbIcon;
+    __weak IBOutlet UILabel *cityLabel;
     
     BOOL isSelected;
     BOOL isSwitchOn;
@@ -35,6 +39,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   // cityLabel.text = [AppManager sharedInstance].userCity;
+    
     [self createPresentControllerButton];
 }
 
@@ -135,28 +141,31 @@
     
     [self PresentViewController:loginButton];
     
-    
-    
+}
+
+- (IBAction)RegisterBtnTpd:(id)sender
+{
+    SignupViewController* signUpVC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SignupViewController"];
+    [self.navigationController pushViewController:signUpVC animated:YES];
 }
 
 - (void)createPresentControllerButton{
     HyLoginButton *loginButton = [[HyLoginButton alloc] initWithFrame:login_button.frame];
-    [loginButton setBackgroundColor:[UIColor colorWithRed:77.0/255.0 green:188.0/255.0 blue:233.0/255.0 alpha:0.82]];
-    [loginButton setTitle:@"log in" forState:UIControlStateNormal];
+    [loginButton setBackgroundColor:[UIColor clearColor]];
+   // [loginButton setTitle:@"log in" forState:UIControlStateNormal];
     [loginButton addTarget:self action:@selector(PresentViewController:) forControlEvents:UIControlEventTouchUpInside];
     [loginButtonPanel addSubview:loginButton];
+    [self.view bringSubviewToFront:login_button ];
 }
 
 - (void)PresentViewController:(HyLoginButton *)button {
+    [login_button setTitle:@"" forState:UIControlStateNormal];
     typeof(self) __weak weak = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-       // [weak didPresentControllerButtonTouch];
         
         isSwitchOn = !isSwitchOn;
         
         if (isSwitchOn) {
-            //网络正常 或者是密码账号正确跳转动画
             [button succeedAnimationWithCompletion:^{
                 if (isSwitchOn)
                 {
@@ -166,7 +175,6 @@
                 }
             }];
         } else {
-            //网络错误 或者是密码不正确还原动画
             [button failedAnimationWithCompletion:^{
                 if (isSwitchOn == NO) {
                     //isSwitchOn = YES;
@@ -182,15 +190,7 @@
 
 - (void)didPresentControllerButtonTouch
 {
-//    UIViewController *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"OnboardingPageController"];
-//    controller.transitioningDelegate = self;
-//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-//    
-//    navigationController.transitioningDelegate = self;
-//    [navigationController.navigationBar setHidden:YES];
-//    [self presentViewController:navigationController animated:YES completion:nil];
-//    
-//    
+    
     UIViewController *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"OnboardingPagerManager"];
     controller.transitioningDelegate = self;
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];

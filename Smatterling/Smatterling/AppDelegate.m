@@ -7,18 +7,27 @@
 //
 
 #import "AppDelegate.h"
+#import <CoreLocation/CoreLocation.h>
+#import "AppManager.h"
+#import <CoreLocation/CLPlacemark.h>
 
-@interface AppDelegate ()
-
+@interface AppDelegate () <CLLocationManagerDelegate>
+{
+    CLLocationManager* locationManager;
+}
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
-   // [[UILabel appearance] setFont:[UIFont fontWithName:@"NexaLight" size:17.0]];
+    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.delegate = self;
+    [locationManager requestAlwaysAuthorization];
+    [locationManager startUpdatingLocation];
     
     for (NSString* family in [UIFont familyNames])
     {
@@ -30,6 +39,52 @@
         }
     }
     return YES;
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray<CLLocation *> *)locations
+{
+    CLLocation* currentLocation = [locations lastObject];
+    [self getAddressFromLatLon:currentLocation];
+    
+    [AppManager sharedInstance].userLongitude = currentLocation.coordinate.longitude;
+    [AppManager sharedInstance].userLatitude = currentLocation.coordinate.latitude;
+}
+
+// this delegate method is called if an error occurs in locating your current location
+- (void)locationManager:(CLLocationManager* )manager didFailWithError:(NSError* )error
+{
+    NSLog(@"locationManager:%@ didFailWithError:%@", manager, error);
+}
+
+// this delegate is called when the reverseGeocoder finds a placemark
+- (void) getAddressFromLatLon:(CLLocation *)bestLocation
+{
+    NSLog(@"%f %f", bestLocation.coordinate.latitude, bestLocation.coordinate.longitude);
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+    [geocoder reverseGeocodeLocation:bestLocation
+                   completionHandler:^(NSArray *placemarks, NSError *error)
+     {
+         if (error){
+             NSLog(@"Geocode failed with error: %@", error);
+             return;
+         }
+         CLPlacemark *placemark = [placemarks objectAtIndex:0];
+         NSLog(@"placemark.ISOcountryCode %@",placemark.ISOcountryCode);
+         NSLog(@"locality %@",placemark.locality);
+         NSLog(@"postalCode %@",placemark.postalCode);
+         
+         if (placemark.locality != nil) {
+             [AppManager sharedInstance].userCity = placemark.locality;
+         }
+         else
+         {
+             [AppManager sharedInstance].userCity = @"";
+         }
+         
+     }];
+    
 }
 
 

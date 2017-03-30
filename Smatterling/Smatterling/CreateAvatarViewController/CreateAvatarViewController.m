@@ -36,45 +36,35 @@ PHCachingImageManager *imageManager;
     imageArray=[[NSArray alloc] init];
     mutableArray =[[NSMutableArray alloc]init];
     
-    PHFetchOptions *options = [[PHFetchOptions alloc] init];
-    options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]];
-    result = [PHAsset fetchAssetsWithOptions:options];
-    imageManager = [[PHCachingImageManager alloc] init];
     
-//    PHImageRequestOptions *requestOptions = [[PHImageRequestOptions alloc] init];
-//    requestOptions.resizeMode   = PHImageRequestOptionsResizeModeExact;
-//    requestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeFastFormat;
-//    requestOptions.synchronous = true;
-//
-//    PHFetchResult *result = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:nil];
-//
-//    NSLog(@"%d",(int)result.count);
-//    
-//    PHImageManager *manager = [PHImageManager defaultManager];
-//    NSMutableArray *images = [NSMutableArray arrayWithCapacity:[result count]];
-//    
-//    // assets contains PHAsset objects.
-//    
-//    __block UIImage *ima;
-//    for (PHAsset *asset in result) {
-//        // Do something with the asset
-//        
-//        [manager requestImageForAsset:asset
-//                           targetSize:PHImageManagerMaximumSize
-//                          contentMode:PHImageContentModeDefault
-//                              options:requestOptions
-//                        resultHandler:^void(UIImage *image, NSDictionary *info) {
-//                            ima = image;
-//                            
-//                            [images addObject:ima];
-//                        }];
-//        
-//        
-//    }
-//    
-//    imageArray = [images copy];  // You can direct use NSMutuable Array images
-    [photoCollectionView reloadData];
-    
+    if ([PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusNotDetermined) {
+        
+        [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+            
+            if (status == PHAuthorizationStatusAuthorized)
+            {
+                PHFetchOptions *options = [[PHFetchOptions alloc] init];
+                options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]];
+                result = [PHAsset fetchAssetsWithOptions:options];
+                //    PHAsset]
+                imageManager = [[PHCachingImageManager alloc] init];
+                [photoCollectionView reloadData];
+            }
+            
+            else {
+                // Access has been denied.
+            }
+        }];
+        
+    }else if ([PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusAuthorized)
+    {
+        PHFetchOptions *options = [[PHFetchOptions alloc] init];
+        options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]];
+        result = [PHAsset fetchAssetsWithOptions:options];
+        //    PHAsset]
+        imageManager = [[PHCachingImageManager alloc] init];
+        [photoCollectionView reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -121,14 +111,18 @@ PHCachingImageManager *imageManager;
     
     PHImageRequestOptions *requestOptions = [[PHImageRequestOptions alloc] init];
     requestOptions.resizeMode   = PHImageRequestOptionsResizeModeExact;
-    requestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeFastFormat;
+    requestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
    // requestOptions.synchronous = true;
 
     
-    [imageManager requestImageForAsset:asset targetSize:CGSizeMake(200, 200) contentMode:PHImageContentModeAspectFill options:requestOptions resultHandler:^(UIImage *result, NSDictionary *info)
+    [imageManager requestImageForAsset:asset targetSize:CGSizeMake(300, 300) contentMode:PHImageContentModeAspectFill options:requestOptions resultHandler:^(UIImage *result, NSDictionary *info)
      {
+         if (indexPath.row == 0) {
+             avatarImageView.image = result;
+         }
          cell.avatarImageView.image = result;
      }];
+    
     
     return cell;
 }

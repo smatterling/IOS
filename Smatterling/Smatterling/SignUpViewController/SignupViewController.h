@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SignupViewController : UIViewController
-
+@property (nonatomic) BOOL isFromProfile;
 @end

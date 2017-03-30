@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Smatterling/OnBoardingViewController/OnboardingPagerManager.m"
-            timestampString = "510575703.054501"
+            filePath = "Smatterling/TabBarInnerViewControllers/MainMapViewController.m"
+            timestampString = "511965209.109848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "-pageViewController:viewControllerBeforeViewController:"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "-mapView:didSelectAnnotationView:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Smatterling/OnBoardingViewController/OnboardingPagerManager.m"
-            timestampString = "510575703.054501"
+            filePath = "Smatterling/TabBarInnerViewControllers/MainMapViewController.m"
+            timestampString = "511965209.109848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "-CreatePager"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "-adaptivePresentationStyleForPresentationController:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Smatterling/ViewController.m"
-            timestampString = "510580905.104167"
+            filePath = "Smatterling/AppDelegate.m"
+            timestampString = "511964250.630098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
-            landmarkName = "-didPresentControllerButtonTouch"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-locationManager:didUpdateLocations:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Smatterling/ViewController.m"
-            timestampString = "510580905.104167"
+            filePath = "Smatterling/TabBarInnerViewControllers/MainMapViewController.m"
+            timestampString = "511965310.375777"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
-            landmarkName = "-animationControllerForDismissedController:"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-mapView:viewForAnnotation:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -73,13 +73,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Smatterling/ViewController.m"
-            timestampString = "510580905.104167"
+            filePath = "Smatterling/TabBarInnerViewControllers/LocationFinderViewController.m"
+            timestampString = "511968745.807614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
-            landmarkName = "-animationControllerForPresentedController:presentingController:sourceController:"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,13 +89,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Smatterling/OnBoardingViewController/OnboardingPagerManager.m"
-            timestampString = "510575703.054501"
+            filePath = "Smatterling/TabBarInnerViewControllers/HostLocationViewController.m"
+            timestampString = "511971609.115734"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
-            landmarkName = "-pageViewController:willTransitionToViewControllers:"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "-LocationSelected:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -105,13 +105,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Smatterling/OnBoardingViewController/OnboardingPagerManager.m"
-            timestampString = "510575703.054501"
+            filePath = "Smatterling/TabBarInnerViewControllers/HostLocationViewController.m"
+            timestampString = "511971602.921404"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "-pageViewController:viewControllerAfterViewController:"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-viewDidAppear:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,45 +121,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Smatterling/CreateAvatarViewController/CreateAvatarViewController.m"
-            timestampString = "510578820.054326"
+            filePath = "Smatterling/CustomTabbarController/TabBarManagerViewController.m"
+            timestampString = "511971984.292165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "-collectionView:layout:sizeForItemAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Smatterling/CreateAvatarViewController/CreateAvatarViewController.m"
-            timestampString = "510578820.054326"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "-getAllPhotosFromCamera"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Smatterling/CreateAvatarViewController/CreateAvatarViewController.m"
-            timestampString = "510578820.054326"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            startingLineNumber = "262"
+            endingLineNumber = "262"
+            landmarkName = "-ThirdTabSelected:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,45 +138,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smatterling/ViewController.m"
-            timestampString = "510580914.037231"
+            timestampString = "512507110.354007"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "-FbBtnTpd:"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "-LoginBtnTpd:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ViewController FbBtnTpd:]"
-                  moduleName = "Smatterling"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Usama.m/Documents/Usama/Freelancing/Smatterling/SourceSmatterling/Smatterling/Smatterling/ViewController.m"
-                  timestampString = "510580945.567508"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "236">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__27-[ViewController FbBtnTpd:]_block_invoke"
-                  moduleName = "Smatterling"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Usama.m/Documents/Usama/Freelancing/Smatterling/SourceSmatterling/Smatterling/Smatterling/ViewController.m"
-                  timestampString = "510580945.569098"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

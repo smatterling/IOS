@@ -8,6 +8,7 @@
 
 #import "OnboardingViewController.h"
 #import "MMPulseView.h"
+#import "UIView+RoundedCorners.h"
 
 @interface OnboardingViewController () 
 {
@@ -46,6 +47,7 @@
 
 - (void)MakePulseView
 {
+    [pulseImageView setRoundedCorners:UIRectCornerAllCorners radius:pulseImageView.frame.size.width/2 andBorderWidth:1.0];
     pulseView = [[MMPulseView alloc] init];
     pulseView.frame = innerView.frame;
     [self.view addSubview:pulseView];
