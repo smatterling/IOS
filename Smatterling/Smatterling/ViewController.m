@@ -15,6 +15,7 @@
 // Custom Login Button Classes
 #import "HyTransitions.h"
 #import "HyLoginButton.h"
+#import "TPKeyboardAvoidingScrollView.h"
 
 
 @interface ViewController ()<UIViewControllerTransitioningDelegate>
@@ -28,9 +29,13 @@
     __weak IBOutlet UIView *loginButtonPanel;
     __weak IBOutlet UIImageView *fbIcon;
     __weak IBOutlet UILabel *cityLabel;
+    __weak IBOutlet TPKeyboardAvoidingScrollView *scrollView;
+    __weak IBOutlet UIView *innerView;
     
     BOOL isSelected;
     BOOL isSwitchOn;
+    
+    HyLoginButton *loginButton;
     
 }
 @end
@@ -42,11 +47,15 @@
    // cityLabel.text = [AppManager sharedInstance].userCity;
     
     [self createPresentControllerButton];
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    
+    [scrollView setContentSize:CGSizeMake(innerView.frame.size.width, innerView.frame.size.height - 64)];
+    email_field.attributedPlaceholder = [[NSAttributedString alloc] initWithString:email_field.placeholder attributes: @{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    password_field.attributedPlaceholder = [[NSAttributedString alloc] initWithString:password_field.placeholder attributes: @{NSForegroundColorAttributeName: [UIColor whiteColor]}];
 }
 
 
@@ -150,7 +159,7 @@
 }
 
 - (void)createPresentControllerButton{
-    HyLoginButton *loginButton = [[HyLoginButton alloc] initWithFrame:login_button.frame];
+    loginButton = [[HyLoginButton alloc] initWithFrame:login_button.frame];
     [loginButton setBackgroundColor:[UIColor clearColor]];
    // [loginButton setTitle:@"log in" forState:UIControlStateNormal];
     [loginButton addTarget:self action:@selector(PresentViewController:) forControlEvents:UIControlEventTouchUpInside];
@@ -160,32 +169,41 @@
 
 - (void)PresentViewController:(HyLoginButton *)button {
     [login_button setTitle:@"" forState:UIControlStateNormal];
-    typeof(self) __weak weak = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        isSwitchOn = !isSwitchOn;
-        
-        if (isSwitchOn) {
-            [button succeedAnimationWithCompletion:^{
-                if (isSwitchOn)
-                {
-                    //isSwitchOn = NO;
-                    [weak didPresentControllerButtonTouch];
-                    
-                }
-            }];
-        } else {
-            [button failedAnimationWithCompletion:^{
-                if (isSwitchOn == NO) {
-                    //isSwitchOn = YES;
-                    [weak didPresentControllerButtonTouch];
-                }
-            }];
-        }
-        
-        
-        
-    });
+    
+    [UIView animateWithDuration:0.1 animations:^{
+        login_button.frame = CGRectMake(0-login_button.center.x + login_button.frame.size.height/2, login_button.frame.origin.y, CGRectGetWidth(login_button.frame), CGRectGetHeight(login_button.frame));
+        loginButton.frame = CGRectMake(0-loginButton.center.x + loginButton.frame.size.height/2, loginButton.frame.origin.y, CGRectGetWidth(loginButton.frame), CGRectGetHeight(loginButton.frame));
+    } completion:^(BOOL finished) {
+        typeof(self) __weak weak = self;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            isSwitchOn = !isSwitchOn;
+            
+            if (isSwitchOn) {
+                [button succeedAnimationWithCompletion:^{
+                    if (isSwitchOn)
+                    {
+                        //isSwitchOn = NO;
+                        [weak didPresentControllerButtonTouch];
+                        
+                    }
+                }];
+            } else {
+                [button failedAnimationWithCompletion:^{
+                    if (isSwitchOn == NO) {
+                        //isSwitchOn = YES;
+                        [weak didPresentControllerButtonTouch];
+                    }
+                }];
+            }
+            
+            
+            
+        });
+    }];
+    
+    
+    
 }
 
 - (void)didPresentControllerButtonTouch

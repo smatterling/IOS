@@ -62,14 +62,14 @@ static AppAnimationManager* sharedInstance;
     CABasicAnimation *rotate =
     [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
     rotate.byValue = @(M_PI*2); // Change to - angle for counter clockwise rotation
-    rotate.duration = 1.0;
+    rotate.duration = 0.7f;
     rotate.timingFunction =
     [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     [imageView.layer addAnimation:rotate
                             forKey:@"myRotationAnimation"];
     
     [UIView transitionWithView:parentView
-                      duration:1.0f
+                      duration:0.7f
                        options:UIViewAnimationOptionTransitionCrossDissolve | UIViewAnimationOptionAllowAnimatedContent
                     animations:^{
                         [imageView setImage:toImage];

@@ -18,12 +18,15 @@
 #import "CustomTabBarViewController.h"
 #import "AppManager.h"
 #import "HostLocationCompletionViewController.h"
+#import "CustomTopBarViewController.h"
+#import "RateUserViewController.h"
 
 @interface TabBarManagerViewController ()
 {
     
     NotificationsViewController* notificationVC;
     CustomTabBarViewController* customTabbarVC;
+    CustomTopBarViewController* customTopbarVC;
     HostLocationCompletionViewController* hostLocationNotifVC;
     
     __weak IBOutlet UIView *topbar;
@@ -41,6 +44,10 @@
     
     
     BOOL isNotificationShowing;
+    
+    float start;
+    BOOL directionUp;
+    BOOL isTapped;
 }
 @end
 
@@ -54,6 +61,7 @@
     
     // Notification handlers for tab bar items
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(FirstTabSelected:) name:@"firstTabSelected" object:nil];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(SecondTabSelected:) name:@"secondTabSelected" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ThirdTabSelected:) name:@"thirdTabSelected" object:nil];
     
@@ -72,11 +80,24 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(SettingsTapped:) name:@"Settings" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(HostingProcessComplete:) name:@"hosting_location_complete" object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CloseNotificationBtnTapped) name:@"close_notification_view" object:nil];
+    
     for (UIViewController* vc in self.childViewControllers) {
         if ([vc isKindOfClass:[CustomTabBarViewController class]]) {
             customTabbarVC = (CustomTabBarViewController*)vc;
         }
     }
+    
+    for (UIViewController* vc in self.childViewControllers) {
+        if ([vc isKindOfClass:[CustomTopBarViewController class]]) {
+            customTopbarVC = (CustomTopBarViewController*)vc;
+        }
+    }
+}
+
+- (void)CloseNotificationBtnTapped
+{
+    [self CloseNotificationView:customTopbarVC.notificationButton];
 }
 
 
@@ -296,8 +317,12 @@
     NSMutableDictionary* userInfo = [notification.userInfo mutableCopy];
     UIButton* button = [userInfo objectForKey:@"view"];
     
-    if (notificationVC == nil)
+    if (notificationVC != nil)
     {
+        [notificationVC.view removeFromSuperview];
+        notificationVC = nil;
+    }
+    
         UIStoryboard* mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:NULL];
         notificationVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"NotificationsViewController"];
         notificationVC.view.frame = CGRectMake(button.frame.origin.x + (button.frame.size.width/2), button.frame.origin.y + button.frame.size.height, button.frame.size.width, button.frame.size.height);
@@ -305,28 +330,48 @@
         notificationVC.view.alpha = 0.0;
         [self.view bringSubviewToFront:notificationVC.view];
         [self.view addSubview:notificationVC.view];
-    }
-    else
-    {
-        [self.view addSubview:notificationVC.view];
-    }
+        
+    
+    
+//    for (UIView* view  in  [self.view subviews]) {
+//        if ([view isKindOfClass:[notificationVC.view]) {
+//            
+//        }
+//    }
     
     if (isNotificationShowing == NO)
     {
-        isFirstItemEnabled = NO;
-        isSecondItemEnabled = NO;
-        isThirdItemEnabled = NO;
-        [[AppAnimationManager sharedInstance] ShowView:notificationVC.view FromButton:button toFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + topbar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - topbar.frame.size.height)];
+        [self OpenNotificationView:button];
     }
     else
     {
-        isFirstItemEnabled = YES;
-        isSecondItemEnabled = YES;
-        isThirdItemEnabled = YES;
-        [[AppAnimationManager sharedInstance] HideView:notificationVC.view FromButton:button toFrame:CGRectMake(button.frame.origin.x + (button.frame.size.width/2), button.frame.origin.y + button.frame.size.height, button.frame.size.width, button.frame.size.height)];
+        [self CloseNotificationView:button];
     }
     isNotificationShowing = !isNotificationShowing;
 }
+
+
+- (void)OpenNotificationView : (UIButton*)button
+{
+    isFirstItemEnabled = NO;
+    isSecondItemEnabled = NO;
+    isThirdItemEnabled = NO;
+    [[AppAnimationManager sharedInstance] ShowView:notificationVC.view FromButton:button toFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + topbar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - topbar.frame.size.height)];
+   // [self.view bringSubviewToFront:customTabbarVC.view];
+    
+}
+- (void)CloseNotificationView : (UIButton*)button
+{
+    isFirstItemEnabled = YES;
+    isSecondItemEnabled = YES;
+    isThirdItemEnabled = YES;
+    [[AppAnimationManager sharedInstance] HideView:notificationVC.view FromButton:button toFrame:CGRectMake(button.frame.origin.x + (button.frame.size.width/2), button.frame.origin.y + button.frame.size.height, button.frame.size.width, button.frame.size.height)];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"notification_topbar_closed" object:self];
+    
+}
+
+
 
 - (void)GetDirectionSelected:(NSNotification*)notification
 {
@@ -362,12 +407,118 @@
 
 - (void)QuitLocation:(NSNotification*)notification
 {
+    
     [[AppAnimationManager sharedInstance] ChangeImageOfImageView:customTabbarVC.tabItem2 WithImage:[UIImage imageNamed:@"ic_bottombar_plus"] andParentView:self.view];
     [hostLocationNotifVC.view removeFromSuperview];
+    [self ShowRateView];
     NSLog(@"Location quit");
+    
+}
+
+//... inside mainView impl:
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if (isNotificationShowing)
+    {
+        UITouch *touch = (UITouch *)[touches anyObject];
+        start = [touch locationInView:self.view].y;
+    //    if(start > 30 && notificationVC.view.center.y < 0)//touch was not in upper area of view AND pulldownView not visible
+    //    {
+    //        start = -1; //start is a CGFloat member of this view
+    //    }
+        
+        
+        if(start > notificationVC.closeButton.frame.origin.y && start-customTopbarVC.view.frame.size.height < notificationVC.closeButton.frame.size.height + notificationVC.closeButton.frame.origin.y )
+        {
+            NSLog(@"button area");
+            
+            isTapped = YES;
+        }
+    }
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if (isNotificationShowing) {
+    isTapped = NO;
+    
+    UITouch *touch = (UITouch *)[touches anyObject];
+    CGFloat now = [touch locationInView:self.view].y;
+    CGFloat diff = now - start;
+    directionUp = diff < 0;//directionUp is a BOOL member of this view
+    float nuCenterY = notificationVC.view.center.y + diff;
+//    notificationVC.view.center = CGPointMake(notificationVC.view.center.x, nuCenterY);
+    
+    [notificationVC.view setFrame:CGRectMake(notificationVC.view.frame.origin.x, notificationVC.view.frame.origin.y, notificationVC.view.frame.size.width, notificationVC.view.frame.size.height + diff)];
+    
+    
+    start = now;
+    }
 }
 
 
+-(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if (isNotificationShowing) {
+        if (!isTapped) {
+            if (directionUp)
+            {
+                if (notificationVC.view.frame.origin.y + notificationVC.view.frame.size.height < self.view.frame.size.height/2) {
+                    // initial frame
+                    
+                    [[AppAnimationManager sharedInstance] HideView:notificationVC.view FromButton:customTopbarVC.notificationButton toFrame:CGRectMake(customTopbarVC.notificationButton.frame.origin.x + (customTopbarVC.notificationButton.frame.size.width/2), customTopbarVC.notificationButton.frame.origin.y + customTopbarVC.notificationButton.frame.size.height, customTopbarVC.notificationButton.frame.size.width, customTopbarVC.notificationButton.frame.size.height)];
+                    customTopbarVC.lineView.hidden = NO;
+                    isNotificationShowing = NO;
+                    isFirstItemEnabled = YES;
+                    isSecondItemEnabled = YES;
+                    isThirdItemEnabled = YES;
+                }
+                else
+                {
+                    // final frame
+                    
+                    [[AppAnimationManager sharedInstance] ShowView:notificationVC.view FromButton:customTopbarVC.notificationButton toFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + topbar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - topbar.frame.size.height)];
+                    customTopbarVC.lineView.hidden = YES;
+                    isNotificationShowing = YES;
+                    isFirstItemEnabled = NO;
+                    isSecondItemEnabled = NO;
+                    isThirdItemEnabled = NO;
+                    
+                }
+            }
+            else if(start>=0)
+            {
+                // final frame
+                [[AppAnimationManager sharedInstance] ShowView:notificationVC.view FromButton:customTopbarVC.notificationButton toFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + topbar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - topbar.frame.size.height)];
+                customTopbarVC.lineView.hidden = YES;
+                isNotificationShowing = YES;
+                isFirstItemEnabled = NO;
+                isSecondItemEnabled = NO;
+                isThirdItemEnabled = NO;
+            }
+        }
+        else
+        {
+            isTapped = NO;
+            [[AppAnimationManager sharedInstance] HideView:notificationVC.view FromButton:customTopbarVC.notificationButton toFrame:CGRectMake(customTopbarVC.notificationButton.frame.origin.x + (customTopbarVC.notificationButton.frame.size.width/2), customTopbarVC.notificationButton.frame.origin.y + customTopbarVC.notificationButton.frame.size.height, customTopbarVC.notificationButton.frame.size.width, customTopbarVC.notificationButton.frame.size.height)];
+            customTopbarVC.lineView.hidden = NO;
+            isNotificationShowing = NO;
+            isFirstItemEnabled = YES;
+            isSecondItemEnabled = YES;
+            isThirdItemEnabled = YES;
+        }
+    }
+    
+}
+
+- (void)ShowRateView
+{
+   // [self HideLocation:nil];
+    UIStoryboard* mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:NULL];
+    RateUserViewController* rateUserVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"RateUserViewController"];
+    //signupVC.isFromProfile = YES;
+    [self.navigationController pushViewController:rateUserVC animated:YES];
+}
 
 
 @end

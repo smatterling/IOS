@@ -14,6 +14,7 @@
 @interface LocationFinderViewController ()
 {
     
+    __weak IBOutlet UITextField *locationTextField;
     
    // __weak IBOutlet UIView *distanceView;
     //__weak IBOutlet UIView *distanceView1;
@@ -25,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    locationTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:locationTextField.placeholder attributes: @{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
 }
 
@@ -73,6 +75,8 @@
     LocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     [cell.distanceView setRoundedCorners:UIRectCornerAllCorners radius:CGRectGetHeight(cell.distanceView.bounds) / 2 andBorderWidth:1.0];
+    [cell.innerView.layer setBorderColor:[UIColor whiteColor].CGColor];
+    [cell.innerView.layer setBorderWidth:1.0];
     return cell;
 }
 

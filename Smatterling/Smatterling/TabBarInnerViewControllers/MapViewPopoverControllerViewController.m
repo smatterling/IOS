@@ -46,7 +46,7 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     
-    return 1;
+    return 2;
     
 }
 
@@ -64,8 +64,30 @@
     AvatarCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     [cell ConfigureCell];
     [cell PopulateCell];
+    cell.layer.borderColor = [UIColor whiteColor].CGColor;
+    cell.layer.borderWidth = 1.0;
+    
+    //[cell.layer setCornerRadius:30.0f];
+    
+    // border
+   // [cell.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+   // [cell.layer setBorderWidth:1.5f];
+    
+    // drop shadow
+    [cell.layer setShadowColor:[UIColor blackColor].CGColor];
+    [cell.layer setShadowOpacity:0.8];
+    [cell.layer setShadowRadius:3.0];
+    [cell.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
     return cell;
 }
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout  *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    float cellHeight = collectionView.frame.size.height;
+    CGSize cellSize = CGSizeMake(cellHeight, cellHeight);
+    return cellSize;
+}
+
 
 - (IBAction)GetDirectionBtnTpd:(id)sender
 {

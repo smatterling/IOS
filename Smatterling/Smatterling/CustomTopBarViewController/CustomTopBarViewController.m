@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NotificationClosed:) name:@"notification_topbar_closed" object:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,7 +40,13 @@
     UIButton* button = (UIButton*)sender;
     NSMutableDictionary* userInfo = [[NSMutableDictionary alloc] init];
     [userInfo setObject:button forKey:@"view"];
+    self.lineView.hidden = YES;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"notification_topbar" object:self userInfo:userInfo];
+}
+
+- (void)NotificationClosed:(NSNotification*)notification
+{
+    self.lineView.hidden = NO;
 }
 
 @end

@@ -44,6 +44,8 @@ enum AnimationTypes{
 #define THEME_COLOR_BACKGROUND                 [UIColor colorWithRed:77.0/255.0 green:188.0/255.0 blue:233.0/255.0 alpha:0.8]
 #define THEME_COLOR_BORDER                 [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.8].CGColor;
 
+#define THEME_COLOR_BORDER_BLUE                 [UIColor colorWithRed:77.0/255.0 green:188.0/255.0 blue:233.0/255.0 alpha:0.8].CGColor
+
 #define THEME_COLOR_BLUE            [UIColor colorWithRed:62.0f/255.0f green:101.0f/255.0f blue:160.0f/255.0f alpha:1.0f]
 #define THEME_COLOR_GREEN           [UIColor colorWithRed:21.0f/255.0f green:130.0f/255.0f blue:56.0f/255.0f alpha:1.0f]
 #define THEME_COLOR_BLUE_SEPERATOR  [UIColor colorWithRed:24.0f/255.0f green:66.0f/255.0f blue:100.0f/255.0f alpha:1.0f]

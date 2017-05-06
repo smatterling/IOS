@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *nectarIcon;
 @property (weak, nonatomic) IBOutlet UILabel *nectarLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *logoicon;
+@property (weak, nonatomic) IBOutlet UIView *lineView;
 
 @end

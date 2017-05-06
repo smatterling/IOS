@@ -11,5 +11,6 @@
 @interface LocationTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIView *photoView;
 @property (weak, nonatomic) IBOutlet UIView *distanceView;
+@property (weak, nonatomic) IBOutlet UIView *innerView;
 
 @end

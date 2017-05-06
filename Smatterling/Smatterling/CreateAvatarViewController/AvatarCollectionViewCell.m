@@ -12,8 +12,8 @@
 
 - (void)ConfigureCell
 {
-    [self.avatarImageView.layer setCornerRadius:self.avatarImageView.frame.size.height/2];
-    [self.avatarImageView.layer setMasksToBounds:YES];
+    [self.layer setCornerRadius:self.frame.size.height/2];
+    [self.layer setMasksToBounds:YES];
 }
 
 - (void)PopulateCell

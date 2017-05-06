@@ -71,7 +71,7 @@
     
 }
 - (IBAction)CloseBtnTpd:(id)sender{
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"close_notification_view" object:self];
 }
 
 @end

@@ -22,6 +22,9 @@
     __weak IBOutlet UIView *historyInnerView;
     __weak IBOutlet UITableView *historyTableView;
     __weak IBOutlet UIImageView *photoImageView;
+    __weak IBOutlet UIImageView *blendImageView;
+    
+    float start;
 }
 @end
 
@@ -31,7 +34,11 @@
     [super viewDidLoad];
     [meetingsView setRoundedCorners:UIRectCornerAllCorners radius:meetingsView.frame.size.width/2 andBorderWidth:1.0];
     
-    
+//    photoImageView.layer.shadowColor = [UIColor blackColor].CGColor;
+//    photoImageView.layer.shadowOffset = CGSizeMake(0, 50);
+//    photoImageView.layer.shadowOpacity = 0.8;
+//    photoImageView.layer.shadowRadius = 5;
+//    photoImageView.layer.masksToBounds = NO;
     
 
 }
@@ -46,6 +53,7 @@
     
     historyTableView.frame = tableViewFrame;
     historyInnerView.frame = innerViewFrame;
+   // blendImageView.frame = CGRectMake(0, 0, blendImageView.frame.size.width, innerViewFrame.size.height);
     historyOuterView.frame = outerViewFrame;
     
     meetingsView.center = CGPointMake(self.view.frame.size.width/2, meetingsView.frame.origin.y + (meetingsView.frame.size.height/2));

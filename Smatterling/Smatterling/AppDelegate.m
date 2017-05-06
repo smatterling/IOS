@@ -22,6 +22,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    //[[UILabel appearanceWhenContainedIn:[UITextField class], nil] setTextColor:[UIColor darkGrayColor]];
+    
+    //[UILabel appearanceWhenContainedInInstancesOfClasses:[NSArray arrayWithObjects:[UITextField class], nil]];
+    //[[UITextField appearance] setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    
     
     locationManager = [[CLLocationManager alloc] init];
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;

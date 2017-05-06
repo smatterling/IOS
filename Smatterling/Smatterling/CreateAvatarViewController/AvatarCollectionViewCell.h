@@ -11,6 +11,7 @@
 @interface AvatarCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+@property (weak, nonatomic) IBOutlet UIView *overlayView;
 
 - (void)ConfigureCell;
 - (void)PopulateCell;

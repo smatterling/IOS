@@ -104,8 +104,7 @@ PHCachingImageManager *imageManager;
     static NSString *identifier=@"AvatarCollectionViewCell";
     
     AvatarCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    [cell ConfigureCell];
-    [cell PopulateCell];
+    
     
     PHAsset *asset = result[indexPath.item];
     
@@ -114,6 +113,7 @@ PHCachingImageManager *imageManager;
     requestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
    // requestOptions.synchronous = true;
 
+    cell.avatarImageView.image = nil;
     
     [imageManager requestImageForAsset:asset targetSize:CGSizeMake(300, 300) contentMode:PHImageContentModeAspectFill options:requestOptions resultHandler:^(UIImage *result, NSDictionary *info)
      {
@@ -124,6 +124,13 @@ PHCachingImageManager *imageManager;
      }];
     
     
+   // [cell.avatarImageView setFrame:CGRectMake(0, 0, CGRectGetWidth(cell.frame) - 10, CGRectGetHeight(cell.frame) - 10)];
+   // cell.avatarImageView.center = cell.center;
+    
+    [cell ConfigureCell];
+    [cell PopulateCell];
+    
+    
     return cell;
 }
 
@@ -132,12 +139,19 @@ PHCachingImageManager *imageManager;
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    AvatarCollectionViewCell* cell = (AvatarCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    cell.avatarImageView.hidden = NO;
+    
     PHAsset *asset = result[indexPath.item];
     
     [imageManager requestImageForAsset:asset targetSize:CGSizeMake(200, 200) contentMode:PHImageContentModeAspectFill options:nil resultHandler:^(UIImage *result, NSDictionary *info)
      {
          avatarImageView.image = result;
      }];
+    
+    
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout  *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath

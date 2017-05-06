@@ -7,16 +7,20 @@
 //
 
 #import "RouteViewController.h"
+#import "UIView+RoundedCorners.h"
 
 @interface RouteViewController ()
-
+{
+    __weak IBOutlet UIView *distanceView;
+    
+}
 @end
 
 @implementation RouteViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [distanceView setRoundedCorners:UIRectCornerAllCorners radius:CGRectGetHeight(distanceView.frame) / 2 andBorderWidth:1.0];
 }
 
 - (void)didReceiveMemoryWarning {

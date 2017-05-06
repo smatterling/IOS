@@ -148,15 +148,16 @@
     viewControllerForPopover.modalPresentationStyle = UIModalPresentationPopover;
     viewControllerForPopover.delegate = self;
     UIPopoverPresentationController *presentationPopover = viewControllerForPopover.popoverPresentationController;
-    presentationPopover.backgroundColor = THEME_COLOR_BACKGROUND;
-    
-    viewControllerForPopover.preferredContentSize = CGSizeMake(self.view.frame.size.width, 200);
-    viewControllerForPopover.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 200);
+    presentationPopover.backgroundColor = [UIColor colorWithRed:77.0/255.0 green:188.0/255.0 blue:233.0/255.0 alpha:0.8];
+    viewControllerForPopover.preferredContentSize = CGSizeMake(self.view.frame.size.width, 230);
+    viewControllerForPopover.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 230);
+    viewControllerForPopover.view.backgroundColor = [UIColor clearColor];
     if (presentationPopover != NULL) {
         presentationPopover.sourceView = view;
         presentationPopover.delegate = self;
         presentationPopover.permittedArrowDirections = UIPopoverArrowDirectionUp|UIPopoverArrowDirectionDown;
         presentationPopover.sourceRect = view.bounds;
+        
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{

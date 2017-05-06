@@ -72,6 +72,7 @@
 		6D709E611E83DD7000EEC6DE /* MapViewPopoverControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D709E601E83DD7000EEC6DE /* MapViewPopoverControllerViewController.m */; };
 		6D709E641E83F3D100EEC6DE /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D709E631E83F3D100EEC6DE /* AppManager.m */; };
 		6D709E671E84010E00EEC6DE /* HostLocationCompletionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D709E661E84010E00EEC6DE /* HostLocationCompletionViewController.m */; };
+		6D7ED8871EA3FA53008E6520 /* RateUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7ED8861EA3FA52008E6520 /* RateUserViewController.m */; };
 		6D8E5EC21E69486C008A43BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8E5EC11E69486C008A43BD /* main.m */; };
 		6D8E5EC51E69486C008A43BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8E5EC41E69486C008A43BD /* AppDelegate.m */; };
 		6D8E5EC81E69486C008A43BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8E5EC71E69486C008A43BD /* ViewController.m */; };
@@ -80,6 +81,7 @@
 		6D8E5ED01E69486C008A43BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D8E5ECE1E69486C008A43BD /* LaunchScreen.storyboard */; };
 		6D8E5EDB1E69486C008A43BD /* SmatterlingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8E5EDA1E69486C008A43BD /* SmatterlingTests.m */; };
 		6D8E5EE61E69486C008A43BD /* SmatterlingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8E5EE51E69486C008A43BD /* SmatterlingUITests.m */; };
+		6D9E0EE81EA5E7F30033CB8D /* RateUserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E0EE71EA5E7F30033CB8D /* RateUserCollectionViewCell.m */; };
 		6DFB35F81E6AD0AA00C7020E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DFB35F71E6AD0AA00C7020E /* MapKit.framework */; };
 		8891A323C10E753EA461B870 /* libPods-Smatterling.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B17AF90C08195E60B2D9B8E /* libPods-Smatterling.a */; };
 /* End PBXBuildFile section */
@@ -213,6 +215,8 @@
 		6D709E631E83F3D100EEC6DE /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
 		6D709E651E84010E00EEC6DE /* HostLocationCompletionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostLocationCompletionViewController.h; sourceTree = "<group>"; };
 		6D709E661E84010E00EEC6DE /* HostLocationCompletionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostLocationCompletionViewController.m; sourceTree = "<group>"; };
+		6D7ED8851EA3FA52008E6520 /* RateUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateUserViewController.h; sourceTree = "<group>"; };
+		6D7ED8861EA3FA52008E6520 /* RateUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateUserViewController.m; sourceTree = "<group>"; };
 		6D8E5EBD1E69486C008A43BD /* Smatterling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smatterling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8E5EC11E69486C008A43BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6D8E5EC31E69486C008A43BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 		6D8E5EE11E69486C008A43BD /* SmatterlingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmatterlingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8E5EE51E69486C008A43BD /* SmatterlingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmatterlingUITests.m; sourceTree = "<group>"; };
 		6D8E5EE71E69486C008A43BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D9E0EE61EA5E7F30033CB8D /* RateUserCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateUserCollectionViewCell.h; sourceTree = "<group>"; };
+		6D9E0EE71EA5E7F30033CB8D /* RateUserCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateUserCollectionViewCell.m; sourceTree = "<group>"; };
 		6DFB35F71E6AD0AA00C7020E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CF0362F8BACC4A37E1D7E7B5 /* Pods-Smatterling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smatterling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smatterling/Pods-Smatterling.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -383,6 +389,10 @@
 				6D50A8C51E7B1BD0001CECA6 /* ProfileMeetingTableViewCell.h */,
 				6D709E651E84010E00EEC6DE /* HostLocationCompletionViewController.h */,
 				6D709E661E84010E00EEC6DE /* HostLocationCompletionViewController.m */,
+				6D7ED8851EA3FA52008E6520 /* RateUserViewController.h */,
+				6D7ED8861EA3FA52008E6520 /* RateUserViewController.m */,
+				6D9E0EE61EA5E7F30033CB8D /* RateUserCollectionViewCell.h */,
+				6D9E0EE71EA5E7F30033CB8D /* RateUserCollectionViewCell.m */,
 			);
 			path = TabBarInnerViewControllers;
 			sourceTree = "<group>";
@@ -768,6 +778,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D50A8CD1E7C3956001CECA6 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				6D7ED8871EA3FA53008E6520 /* RateUserViewController.m in Sources */,
 				6D8E5EC81E69486C008A43BD /* ViewController.m in Sources */,
 				6D50A7EF1E794A51001CECA6 /* LocationFinderViewController.m in Sources */,
 				6D50A7E21E77B313001CECA6 /* CustomTopBarViewController.m in Sources */,
@@ -807,6 +818,7 @@
 				6D50A69D1E6C0315001CECA6 /* SignupViewController.m in Sources */,
 				6D50A6991E6C0252001CECA6 /* HyTransitions.m in Sources */,
 				6D50A7D41E76BB50001CECA6 /* CustomTabBarViewController.m in Sources */,
+				6D9E0EE81EA5E7F30033CB8D /* RateUserCollectionViewCell.m in Sources */,
 				6D50A7F21E795421001CECA6 /* CreateAvatarCollectionViewCell.m in Sources */,
 				6D50A6A11E6C035A001CECA6 /* OnboardingViewController.m in Sources */,
 				6D50A76F1E6EB826001CECA6 /* CreateAvatarViewController.m in Sources */,
@@ -904,7 +916,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -946,7 +958,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

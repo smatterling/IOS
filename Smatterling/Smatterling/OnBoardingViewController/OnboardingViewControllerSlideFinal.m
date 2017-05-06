@@ -32,7 +32,7 @@
     [super viewDidLoad];
     initialFrame = CGRectMake(createAvatarView.frame.origin.x, createAvatarView.frame.origin.y + createAvatarView.frame.size.height, createAvatarView.frame.size.width, createAvatarView.frame.size.height);
     finalFrame = createAvatarView.frame;
-    createAvatarView.frame = initialFrame;
+    //createAvatarView.frame = initialFrame;
     
 }
 
@@ -43,14 +43,14 @@
 - (void)AnimateViews
 {
     // animating create avatar view
-    [UIView animateWithDuration:0.5
-                          delay:0.1
-                        options: UIViewAnimationOptionCurveEaseIn
-                     animations:^{
-                         createAvatarView.frame = finalFrame;
-                     }
-                     completion:^(BOOL finished){
-                     }];
+//    [UIView animateWithDuration:0.5
+//                          delay:0.1
+//                        options: UIViewAnimationOptionCurveEaseIn
+//                     animations:^{
+//                         createAvatarView.frame = finalFrame;
+//                     }
+//                     completion:^(BOOL finished){
+//                     }];
     // animating labels view
     
     //bottomView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.001, 0.001);
